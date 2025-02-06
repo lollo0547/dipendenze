@@ -22,7 +22,7 @@
 
 <br><br><br><br>
 
-<table width="100%">
+<table width=100%>
   <tr>
     <td align="left"><strong>Relatore</strong></td>
     <td align="right"><strong>Candidato</strong></td>
