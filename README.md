@@ -11,14 +11,14 @@
 
 <p align="center"><strong>AREA DI INDIRIZZO</strong></p>
 
-<p align="center"><strong>Design</strong></p>
+<p align="center"><strong>Design - Graphic design - Fotografia</strong></p>
 
 ---
 
-<p align="center"><strong>TESI</strong></p>
+<p align="center"><strong>Metodologia progettuale della comunicazione visiva (visual design & art direction)</strong></p>
 
-<p align="center"><strong>“Titolo”</strong></p>
-<p align="center"><em>“Sottotitolo”</em></p>
+<p align="center"><strong>“Elaborato esame”</strong></p>
+<p align="center"><em>“Le dipendenze”</em></p>
 
 <br><br><br><br>
 
@@ -28,30 +28,28 @@
     <td align="right"><strong>Candidato</strong></td>
   </tr>
   <tr>
-    <td align="left">Prof. Cognome Nome</td>
-    <td align="right">Giudici Lorenzo</td>
-  </tr>
-    <tr>
+    <td align="left">Prof. Capitini Matteo</td>
+    <td align="right">Cristina Ippolito - Matr. n. </td>
+  <tr>
+      <tr>
     <td align="left"></td>
-    <td align="right">Nome Candidato 2</td>
+    <td align="right">Christian Carlino - Matr. n. </td>
   </tr>
   <tr>
     <td align="left"></td>
-    <td align="right">Nome Candidato 3</td>
+    <td align="right">Francesco De Pinto - Matr. n. </td>
   </tr>
   <tr>
     <td align="left"></td>
-    <td align="right">Nome Candidato 4</td>
-  </tr>
-  <tr>
-    <td align="left"></td>
-    <td align="right">Matr. n. 1034</td>
-  </tr>
+    <td align="right">Lorenzo Giudici - Matr. n. 1034</td>
 </table>
 
-<br><br>
 
 <p align="center"><strong>Anno accademico 2024/2025</strong></p>
+
+<br>
+
+---
 
 <p align="center"><strong>Indirizzo di pubblicazione Netlify</strong></p>
 
