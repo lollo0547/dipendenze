@@ -11,13 +11,15 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const img = urlParams.get('img');
-        let imgUri = "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif";
-        if( img=="uno") {
-            imgUri = "immagine/giphy.gif";
-        } else if( img=="due") {
-            imgUri = "immagini/giphy(1).gif";
-        } else if( img=="tre") {
-            imgUri = "https://placehold.co/300x400?text=tre";
+        let imgUri = "https://placehold.co/300x400?text=alcool";
+        if( img=="1") {
+            imgUri = "https://placehold.co/300x400?text=droga";
+        } else if( img=="2") {
+            imgUri = "https://placehold.co/300x400?text=gioco";
+        } else if( img=="3") {
+            imgUri = "https://placehold.co/300x400?text=fumo";
+        } else if( img=="4") {
+            imgUri = "https://placehold.co/300x400?text=sesso";
         }
         document.getElementById("immagine").src = imgUri;
     </script>
