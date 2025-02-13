@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img is="immagine" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="gif animata">
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const img = urlParams.get('img');
         let imgUri = "https://placehold.co/300x400?text=alcool";
         if( img=="1") 
         {
-            imgUri = "https://giphy.com/gifs/weed-drugs-SEEZV9PrWRfVu";
+            imgUri = "https://placehold.co/300x400?text=droga";
         } else if( img=="2") 
         {
             imgUri = "https://placehold.co/300x400?text=gioco";
