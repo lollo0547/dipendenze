@@ -15,11 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (imgMap[img]) {
             imgElement.src = imgMap[img].src;
             imgElement.alt = imgMap[img].alt;
-            document.title = imgMap[img].title;
+            if (document.title !== imgMap[img].title) {
+                document.title = imgMap[img].title;
+            }
         } else {
             imgElement.src = "immagini/assefazione.jpg";
             imgElement.alt = "Gif animata alcool";
-            document.title = "this u";
+            if (document.title !== "this u") {
+                document.title = "this u";
+            }
         }
 
         imgElement.onerror = () => {

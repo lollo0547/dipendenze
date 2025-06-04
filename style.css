@@ -11,6 +11,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .logo-link {
     position: fixed;
     top: 16px;
@@ -125,6 +129,11 @@ img.immagine {
     transform: scale(1.15);
 }
 
+.scroll-down-btn:focus-visible {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+}
+
 @keyframes bounce-down {
     0%, 100% { transform: translateY(0);}
     50% { transform: translateY(16px);}
@@ -193,8 +202,9 @@ footer a {
     transition: color 0.2s;
 }
 
-footer a:hover {
-    color: #b3e5fc;
+footer a:hover, footer a:focus {
+    color: #90caf9;
+    text-decoration: underline;
 }
 
 .chi-siamo-titolo {
