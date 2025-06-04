@@ -8,11 +8,11 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="index2">
-    <a href="index.html" class="logo-link">
+    <a href="index2.html" class="logo-link" id="logo-link">
         <img src="immagini/Logo - This u.png" alt="Logo sito" class="logo-img">
     </a>
     <main>
-        <img id="immagine" src="immagini/Logo - This u.png" alt="Logo sito" class="immagine">
+        <img id="immagine" src="immagini/x" alt="image" class="immagine">
         <h2 class="chi-siamo-titolo">Chi siamo?</h2>
         <button class="scroll-down-btn" id="scroll-down" aria-label="Scorri giù">
             <svg viewBox="0 0 40 40">
@@ -26,22 +26,6 @@
             La ricerca di approvazione (like, commenti, visualizzazioni), l’oversharing della propria vita e il doomscrolling compulsivo alla ricerca di dopamina.<br>
             <strong>Tre abitudini quotidiane che spesso passano inosservate, ma che condizionano profondamente il benessere dalla giovane età.</strong>
         </p>
-        <div class="instagram-preview">
-            <div class="insta-header">
-                <img src="immagini/500px-Instagram_icon.webp" alt="Instagram" class="insta-logo">
-                <span class="insta-username">@lollo_lg</span>
-            </div>
-            <iframe 
-                src="https://www.instagram.com/lollo_lg/embed" 
-                frameborder="0" scrolling="no" allowtransparency="true"
-                style="border-radius: 14px; border: 1px solid #e0e0e0; background: #fafafa; margin-top: 18px;">
-            </iframe>
-            <div class="insta-footer">
-                <a href="https://www.instagram.com/lollo_lg" target="_blank" rel="noopener" class="insta-link">
-                    Visita il profilo Instagram
-                </a>
-            </div>
-        </div>
     </section>
     <script src="script.js"></script>
     <footer>
@@ -52,16 +36,41 @@
             <div>
                 Realizzato dai ragazzi per i ragazzi
             </div>
-            <div class="footer-social">
-                <a href="https://www.instagram.com/your_instagram_username" target="_blank" rel="noopener" aria-label="Instagram">
-                    <img src="immagini/500px-Instagram_icon.webp" alt="Instagram" class="footer-instagram-icon">
-                </a>
-            </div>
         </div>
     </footer>
     <button id="back-to-top" class="back-to-top-btn" aria-label="Torna su">Torna su &uarr;</button>
     <script>
-    document.getElementById('back-to-top').onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+    document.addEventListener('DOMContentLoaded', function() {
+        // Torna su
+        var btn = document.getElementById('back-to-top');
+        if (btn) {
+            btn.addEventListener('click', function() {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+        // Ricorda la pagina precedente
+        var logo = document.getElementById('logo-link');
+        if (logo) {
+            logo.addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.setItem('lastIndexPage', window.location.pathname);
+                window.location.href = logo.getAttribute('href');
+            });
+        }
+        // Se arrivo su index2, torna dove ero prima se torno indietro
+        if (window.location.pathname.endsWith('index2.html')) {
+            var last = localStorage.getItem('lastIndexPage');
+            if (last && last !== window.location.pathname) {
+                var backBtn = document.getElementById('back-to-top');
+                if (backBtn) {
+                    backBtn.insertAdjacentHTML('afterend', '<button id="back-to-last" class="back-to-top-btn" aria-label="Torna alla pagina precedente">Torna alla pagina precedente</button>');
+                    document.getElementById('back-to-last').onclick = function() {
+                        window.location.href = last;
+                    };
+                }
+            }
+        }
+    });
     </script>
 </body>
 </html>
