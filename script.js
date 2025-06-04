@@ -10,19 +10,37 @@ document.addEventListener("DOMContentLoaded", () => {
         "4": { src: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", alt: "Gif animata sesso", title: "Dipendenza da sesso" }
     };
 
-    if (imgMap[img]) {
-        imgElement.src = imgMap[img].src;
-        imgElement.alt = imgMap[img].alt;
-        document.title = imgMap[img].title; // Aggiorna il titolo della pagina
-    } else {
-        imgElement.src = "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif";
-        imgElement.alt = "Gif animata alcool";
-        document.title = "Dipendenza da alcool"; // Titolo predefinito
+    // Gestione immagine dinamica SOLO se non siamo su index2.html
+    if (imgElement && !window.location.pathname.endsWith('index2.html')) {
+        if (imgMap[img]) {
+            imgElement.src = imgMap[img].src;
+            imgElement.alt = imgMap[img].alt;
+            document.title = imgMap[img].title;
+        } else {
+            imgElement.src = "immagini/assefazione.jpg";
+            imgElement.alt = "Gif animata alcool";
+            document.title = "this u";
+        }
+
+        imgElement.onerror = () => {
+            imgElement.src = "https://placehold.co/300x400?text=Errore";
+            imgElement.alt = "Errore nel caricamento dell'immagine";
+        };
     }
 
-    // Gestione errori di caricamento immagine
-    imgElement.onerror = () => {
-        imgElement.src = "https://placehold.co/300x400?text=Errore";
-        imgElement.alt = "Errore nel caricamento dell'immagine";
-    };
+    // Scroll animato verso la sezione testo
+    const scrollDown = document.getElementById('scroll-down');
+    const testoScroll = document.getElementById('testo-scroll');
+    if (scrollDown && testoScroll) {
+        scrollDown.addEventListener('click', function(e) {
+            e.preventDefault();
+            testoScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        scrollDown.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                testoScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
 });

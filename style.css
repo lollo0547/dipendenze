@@ -5,51 +5,391 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url('https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif') no-repeat center center fixed;
-    background-size: cover;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    text-align: center;
+    background: #ededed;
+    overflow-x: hidden;
 }
 
-img {
+.logo-link {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 96px;
+    height: 96px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+    background: #fff;
+}
+
+.logo-img:hover {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+main {
+    width: 100%;
+    max-width: 500px;
+    margin: 60px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+/* Stile immagine principale per index.html */
+img.immagine {
+    width: 33vw;
     max-width: 100%;
+    min-width: 120px;
     height: auto;
-    border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards; /* Aggiunto effetto di fade-in */
+    animation: fadeIn 0.5s ease-in-out forwards;
+    margin-top: 64px;
+    margin-bottom: 48px;
+    display: block;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.sezione-testo {
+    margin: 48px 0 0 0;
+    padding: 10vh 10vw 8vh 10vw;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    font-size: 1.2rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.sezione-testo h2 {
+    margin-bottom: 32px;
+    font-size: clamp(1.3rem, 5vw, 2.2rem);
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+.sezione-testo p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: #444;
+    padding-bottom: 2vh;
+}
+
+.scroll-down-btn {
+    margin: 32px 0 0 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+    animation: bounce-down 1.5s infinite;
+}
+
+.scroll-down-btn svg {
+    width: 40px;
+    height: 40px;
+    stroke: #222;
+    fill: none;
+    stroke-width: 3;
+    transition: stroke 0.2s, transform 0.2s;
+}
+
+.scroll-down-btn:hover svg,
+.scroll-down-btn:focus svg {
+    stroke: #666;
+    transform: scale(1.15);
+}
+
+@keyframes bounce-down {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(16px);}
+}
+
+/* Scroll Down Arrow Animation (with vendor prefixes) */
+@-webkit-keyframes arrows {
+    0% { top:0; }
+    10% { top:12%; }
+    20% { top:0; }
+    30% { top:12%; }
+    40% { top:-12%; }
+    50% { top:12%; }
+    60% { top:0; }
+    70% { top:12%; }
+    80% { top:-12%; }
+    90% { top:12%; }
+    100% { top:0; }
+}
+@keyframes arrows {
+    0% { top:0; }
+    10% { top:12%; }
+    20% { top:0; }
+    30% { top:12%; }
+    40% { top:-12%; }
+    50% { top:12%; }
+    60% { top:0; }
+    70% { top:12%; }
+    80% { top:-12%; }
+    90% { top:12%; }
+    100% { top:0; }
+}
+
+/* Example usage for a scroll arrow (add this markup if you want to use it):
+   <div class="arrow-wrap"><div class="arrow"></div></div>
+*/
+.arrow-wrap .arrow {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 2em 2em 0 2em;
+    border-color: #222 transparent transparent transparent;
+    -webkit-animation: arrows 2.8s 0.4s;
+    -webkit-animation-delay: 3s;
+    animation: arrows 2.8s 0.4s;
+    animation-delay: 3s;
+}
+
+footer {
+    width: 100vw;
+    max-width: 100vw;
+    background: #222;
+    color: #eee;
+    text-align: center;
+    padding: 32px 10px 18px 10px;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #b3e5fc;
+}
+
+.chi-siamo-titolo {
+    margin: 32px 0 16px 0;
+    font-size: 2rem;
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.instagram-preview {
+    margin-top: 32px;
+    background: #fafafa;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 18px 14px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    overflow-x: auto;
+}
+
+.insta-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.insta-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.insta-username {
+    font-weight: 600;
+    color: #222;
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+}
+
+.instagram-preview iframe {
+    width: 860px;
+    max-width: 100%;
+    min-height: 420px;
+    height: 420px;
+    border-radius: 14px;
+    border: 1px solid #e0e0e0;
+    background: #fafafa;
+    margin-bottom: 8px;
+    aspect-ratio: 16/7;
+}
+
+.insta-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.insta-link {
+    color: #3897f0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s;
+    display: inline-block;
+    padding: 6px 0;
+}
+
+.insta-link:hover {
+    color: #125688;
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    main {
+        max-width: 90vw;
     }
-    to {
-        opacity: 1;
+    .logo-img {
+        width: 80px;
+        height: 80px;
+    }
+    .sezione-testo {
+        padding: 6vh 4vw;
+        font-size: 1.05rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     body {
-        flex-direction: column;
-        padding: 20px;
+        padding: 0 2vw;
     }
-
-    img {
-        max-width: 90%;
+    main {
+        max-width: 98vw;
+    }
+    .logo-link {
+        top: 8px;
+        right: 8px;
+    }
+    .logo-img {
+        width: 64px;
+        height: 64px;
+    }
+    img.immagine {
+        width: 33vw;
+        max-width: 90vw;
+        min-width: 80px;
+        margin-top: 32px;
+        margin-bottom: 24px;
+    }
+    .sezione-testo {
+        margin-top: 24px;
+        padding: 6vh 1vw 4vh 1vw;
+    }
+    footer {
+        font-size: 0.92rem;
+        padding: 20px 4px 12px 4px;
+    }
+    .chi-siamo-titolo {
+        margin-top: 18px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    .instagram-preview {
+        margin-top: 18px;
+    }
+    .instagram-preview iframe {
+        width: 98vw;
+        min-width: 220px;
+        height: 38vw;
+        min-height: 220px;
+        aspect-ratio: 16/7;
+    }
+    .insta-thumb {
+        width: 70px;
+        height: 70px;
+    }
+    .insta-logo {
+        width: 26px;
+        height: 26px;
+    }
+    .insta-username {
+        font-size: 0.98rem;
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
+@media (max-width: 400px) {
+    .logo-img {
+        width: 48px;
+        height: 48px;
     }
+    main {
+        padding: 0;
+    }
+    .sezione-testo {
+        padding: 2vh 0.5vw;
+    }
+}
 
-    img {
-        max-width: 100%;
+@media (max-width: 350px) {
+    img.immagine {
+        max-width: 95vw;
+    }
+    .sezione-testo {
+        padding: 1vh 2vw;
+    }
+}
+
+/* Stile immagine principale per index2.html */
+body.index2 img.immagine {
+    width: 33vw;
+    max-width: 100%;
+    min-width: 120px;
+    margin-top: 180px;
+    margin-bottom: 180px;
+}
+
+/* Media query specifica per index2.html */
+@media (max-width: 600px) {
+    body.index2 img.immagine {
+        width: 33vw;
+        max-width: 90vw;
+        min-width: 80px;
+        margin-top: 18px;
+        margin-bottom: 12px;
     }
 }
