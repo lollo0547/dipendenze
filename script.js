@@ -10,8 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "4": { src: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif", alt: "Gif animata sesso", title: "Dipendenza da sesso" }
     };
 
-    // Gestione immagine dinamica SOLO se non siamo su index2.html
-    if (imgElement && !window.location.pathname.endsWith('index2.html')) {
+    // Gestione immagine dinamica SOLO su index.html (o index1)
+    if (
+        imgElement &&
+        (window.location.pathname.endsWith('index.html') ||
+         window.location.pathname.endsWith('index1.html') ||
+         window.location.pathname === '/' ||
+         window.location.pathname === '/index.html')
+    ) {
         if (imgMap[img]) {
             imgElement.src = imgMap[img].src;
             imgElement.alt = imgMap[img].alt;
@@ -20,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else {
             imgElement.src = "immagini/assefazione.jpg";
-            imgElement.alt = "Gif animata alcool";
+            imgElement.alt = "Immagine di assuefazione";
             if (document.title !== "this u") {
                 document.title = "this u";
             }
