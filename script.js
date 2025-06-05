@@ -22,10 +22,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const imgMap = {
-        "1": { src: "immagini/Happy Season 5 GIF by The Office.gif", alt: "Gif animata droga", title: "this u" },
-        "2": { src: "immagini/You Bro New York Jets GIF by Nickelodeon at Super Bowl.gif", alt: "Gif animata gioco", title: "this u" },
-        "3": { src: "immagini/Happy Lionel Messi GIF.gif", alt: "Gif animata fumo", title: "this u" },
-        "4": { src: "immagini/I Am Coming For You Oh No GIF by Manifest Destiny Down SPACETIME.gif", alt: "Gif animata sesso", title: "this u" }
+        "1": {
+            src: "https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif",
+            alt: "Gif animata droga",
+            title: "this u"
+        },
+        "2": {
+            src: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+            alt: "Gif animata gioco",
+            title: "this u"
+        },
+        "3": {
+            src: "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif",
+            alt: "Gif animata fumo",
+            title: "this u"
+        },
+        "4": {
+            src: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+            alt: "Gif animata sesso",
+            title: "this u"
+        }
     };
 
     // Gestione immagine dinamica SOLO su index.html (o index1)
@@ -43,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.title = imgMap[img].title;
             }
         } else {
-            imgElement.src = "immagini/Chuck Liddell Point GIF by UFC.gif";
+            imgElement.src = "https://media.giphy.com/media/evcB2qZZuYOi2lHqbh/giphy.gif";
             imgElement.alt = "This u";
             if (document.title !== "this u") {
                 document.title = "this u";

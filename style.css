@@ -286,6 +286,54 @@ footer {
     outline: none;
 }
 
+/* Nuove regole per .img-stack, .main-gif e .half-img */
+.img-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main-gif {
+    display: block;
+    max-width: 90vw;
+    height: auto;
+    /* Puoi regolare la dimensione massima se necessario */
+}
+
+.half-img {
+    display: block;
+    max-width: 45vw;
+    height: auto;
+    margin-top: 16px;
+}
+
+/* Mantieni la seconda immagine sempre la metà della gif sopra */
+@media (min-width: 1px) {
+    .main-gif {
+        width: auto;
+        height: 40vh;
+        max-width: 90vw;
+    }
+    .half-img {
+        width: auto;
+        height: 20vh;
+        max-width: 45vw;
+    }
+}
+
+/* Responsive: su schermi piccoli, adatta le dimensioni */
+@media (max-width: 600px) {
+    .main-gif {
+        height: 30vh;
+        max-width: 98vw;
+    }
+    .half-img {
+        height: 15vh;
+        max-width: 49vw;
+    }
+}
+
 /* Extra Small Devices (≤400px) */
 @media (max-width: 400px) {
     .logo-img {
