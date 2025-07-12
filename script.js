@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 testoElement.textContent = imgMap[img].text;
             }
         } else {
-            imgElement.src = "https://media.giphy.com/media/evcB2qZZuYOi2lHqbh/giphy.gif";
+            imgElement.src = "immagini/Immagine WhatsApp 2025-07-12 ore 18.55.35_f5e39a76.jpg";
             imgElement.alt = "This u";
             if (document.title !== "this u") {
                 document.title = "this u";
