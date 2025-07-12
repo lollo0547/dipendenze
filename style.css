@@ -20,7 +20,22 @@ body {
 /* Sfondo bianco solo per index2 */
 body.index2 {
     background: #fff !important;
-    /* Lo scroll ora è abilitato anche su index2 */
+    overflow-y: auto; /* Abilita lo scroll per index2 */
+}
+
+/* Assicura che main occupi l'intera vista su index2 */
+body.index2 main {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Occupa l'intera altezza della finestra */
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 60px 20px 20px 20px; /* Spazio per il logo in alto */
 }
 
 .logo-link {
@@ -54,6 +69,13 @@ main {
     min-height: 60vh;
 }
 
+/* Regole specifiche per body NON index2 */
+body:not(.index2) main {
+    margin: 60px auto 0 auto;
+    min-height: 60vh;
+    height: auto;
+}
+
 /* Wrapper per l'immagine principale */
 .img-wrapper {
     height: 33.333vh;
@@ -81,7 +103,7 @@ img.immagine {
 }
 
 .sezione-testo {
-    margin: 48px 0 0 0;
+    margin: 0; /* Rimuovo il margin top */
     padding: 10vh 10vw 8vh 10vw;
     background: #fff;
     width: 100vw;
@@ -93,7 +115,7 @@ img.immagine {
     align-items: center;
     color: #222;
     font-size: 1.2rem;
-    text-align: center;
+    text-align: justify;
     box-sizing: border-box;
 }
 
@@ -112,6 +134,20 @@ img.immagine {
     font-size: clamp(1rem, 3vw, 1.25rem);
     color: #444;
     padding-bottom: 2vh;
+    text-align: justify;
+}
+
+/* Giustificazione globale per tutti i paragrafi */
+p {
+    text-align: justify;
+}
+
+/* Mantieni centrato solo per elementi specifici */
+.chi-siamo-titolo,
+footer,
+.insta-footer,
+.insta-header {
+    text-align: center;
 }
 
 .scroll-down-btn {
@@ -344,10 +380,17 @@ footer {
         padding: 0;
         margin-top: 12px;
     }
+    /* Regole specifiche per index2 su mobile */
+    body.index2 main {
+        padding: 60px 10px 20px 10px;
+        margin-top: 0;
+        height: 100vh;
+        min-height: 100vh;
+    }
     .sezione-testo {
         padding: 2vh 2vw;
         font-size: 0.97rem;
-        margin-top: 12px;
+        margin-top: 0; /* Rimuovo margin per index2 */
     }
     img.immagine {
         height: 33.333vh;
@@ -395,6 +438,14 @@ footer {
         max-width: 98vw;
         margin-top: 24px;
     }
+    /* Regole specifiche per index2 su tablet piccoli */
+    body.index2 main {
+        max-width: 98vw;
+        margin-top: 0;
+        padding: 60px 20px 20px 20px;
+        height: 100vh;
+        min-height: 100vh;
+    }
     .logo-link {
         top: 8px;
         right: 8px;
@@ -413,7 +464,7 @@ footer {
         border-radius: 0 !important;
     }
     .sezione-testo {
-        margin-top: 14px;
+        margin-top: 0; /* Rimuovo margin per index2 */
         padding: 5vh 4vw 3vh 4vw;
         font-size: 1.03rem;
         border-radius: 8px;
@@ -632,5 +683,33 @@ body.index2 img.immagine {
         margin-bottom: 12px;
         object-fit: contain;
         border-radius: 0 !important;
+    }
+}
+
+/* Regole specifiche per index2 - assicura che main occupi sempre l'intera vista */
+@media (min-width: 601px) and (max-width: 900px) {
+    body.index2 main {
+        height: 100vh;
+        min-height: 100vh;
+        margin-top: 0;
+        padding: 60px 30px 20px 30px;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    body.index2 main {
+        height: 100vh;
+        min-height: 100vh;
+        margin-top: 0;
+        padding: 60px 40px 20px 40px;
+    }
+}
+
+@media (min-width: 1201px) {
+    body.index2 main {
+        height: 100vh;
+        min-height: 100vh;
+        margin-top: 0;
+        padding: 60px 50px 20px 50px;
     }
 }
