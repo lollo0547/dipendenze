@@ -49,8 +49,8 @@ main {
 
 /* Immagine principale - CENTRATA E DOPPIA ALTEZZA */
 .immagine {
-    height: 190vh;
-    width: 95vw;
+    height: 95vh;
+    width: 47.5vw;
     object-fit: contain;
     border: none !important;
     position: absolute;
@@ -63,9 +63,9 @@ main {
 /* Titolo "Chi siamo?" */
 .chi-siamo-titolo {
     position: absolute;
-    top: 50%;
+    bottom: 70px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     font-size: 3rem;
     font-weight: bold;
     color: #333;
@@ -83,6 +83,8 @@ main {
     border: none;
     cursor: pointer;
     z-index: 100;
+    animation: bounce 2s infinite;
+    transition: all 0.3s ease;
 }
 
 .scroll-down-btn svg {
@@ -91,10 +93,29 @@ main {
     stroke: #333;
     stroke-width: 2;
     fill: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-down-btn:hover {
+    animation-play-state: paused;
+    transform: translateX(-50%) scale(1.2);
 }
 
 .scroll-down-btn:hover svg {
     stroke: #666;
+}
+
+/* Animazione di rimbalzo */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
 }
 
 /* ========================================
@@ -140,8 +161,8 @@ main {
 }
 
 .insta-logo {
-    width: 32px;
-    height: 32px;
+    width: 16px;
+    height: 16px;
     margin-right: 10px;
 }
 
@@ -152,7 +173,7 @@ main {
 
 .instagram-preview iframe {
     width: 100%;
-    height: 400px;
+    height: 200px;
     border: none;
     background: #fafafa;
 }
@@ -200,8 +221,8 @@ footer {
 }
 
 .footer-instagram-icon {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
 }
 
 /* Pulsante torna su */
@@ -233,8 +254,8 @@ footer {
     }
     
     .immagine {
-        height: 190vh;
-        width: 95vw;
+        height: 95vh;
+        width: 47.5vw;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -245,6 +266,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 3.5rem;
+        bottom: 80px;
     }
     
     .sezione-testo {
@@ -264,7 +286,7 @@ footer {
     }
     
     .instagram-preview iframe {
-        height: 500px;
+        height: 250px;
     }
     
     .footer-content {
@@ -279,8 +301,8 @@ footer {
     }
     
     .immagine {
-        height: 190vh;
-        width: 95vw;
+        height: 95vh;
+        width: 47.5vw;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -291,6 +313,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 3rem;
+        bottom: 70px;
     }
     
     .sezione-testo {
@@ -310,7 +333,7 @@ footer {
     }
     
     .instagram-preview iframe {
-        height: 450px;
+        height: 225px;
     }
 }
 
@@ -321,8 +344,8 @@ footer {
     }
     
     .immagine {
-        height: 190vh;
-        width: 95vw;
+        height: 95vh;
+        width: 47.5vw;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -333,6 +356,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 2.5rem;
+        bottom: 65px;
     }
     
     .sezione-testo {
@@ -352,7 +376,7 @@ footer {
     }
     
     .instagram-preview iframe {
-        height: 400px;
+        height: 200px;
     }
     
     .footer-content {
@@ -369,8 +393,8 @@ footer {
     }
     
     .immagine {
-        height: 190vh;
-        width: 95vw;
+        height: 95vh;
+        width: 47.5vw;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -381,6 +405,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 2rem;
+        bottom: 60px;
     }
     
     .sezione-testo {
@@ -400,7 +425,7 @@ footer {
     }
     
     .instagram-preview iframe {
-        height: 350px;
+        height: 175px;
     }
     
     .footer-content {
@@ -421,8 +446,8 @@ footer {
     }
     
     .immagine {
-        height: 190vh;
-        width: 95vw;
+        height: 95vh;
+        width: 47.5vw;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -434,6 +459,7 @@ footer {
     .chi-siamo-titolo {
         font-size: 1.6rem;
         padding: 0 1rem;
+        bottom: 55px;
     }
     
     .sezione-testo {
@@ -456,12 +482,12 @@ footer {
     }
     
     .instagram-preview iframe {
-        height: 280px;
+        height: 140px;
     }
     
     .insta-logo {
-        width: 28px;
-        height: 28px;
+        width: 14px;
+        height: 14px;
     }
     
     .insta-username {
@@ -475,8 +501,8 @@ footer {
     }
     
     .footer-instagram-icon {
-        width: 25px;
-        height: 25px;
+        width: 12.5px;
+        height: 12.5px;
     }
     
     .scroll-down-btn svg {
