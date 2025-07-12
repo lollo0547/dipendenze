@@ -3,24 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const img = urlParams.get('img');
     const imgElement = document.getElementById("immagine");
 
-    // Redirect to index3.html if ?img=3 on index.html
-    if (
-        window.location.pathname.endsWith('index.html') &&
-        img === '3'
-    ) {
-        window.location.replace('index3.html');
-        return;
-    }
-
-    // Redirect to index4.html if ?img=2 on index.html
-    if (
-        window.location.pathname.endsWith('index.html') &&
-        img === '2'
-    ) {
-        window.location.replace('index4.html');
-        return;
-    }
-
     const imgMap = {
         "1": {
             src: "https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif",

@@ -6,18 +6,44 @@
     <title>This u</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 </head>
-<body style="overflow:hidden;height:100vh;">
-    <a href="index2.html" class="logo-link">
+<body class="index2">
+    <a href="index2.html" class="logo-link" id="logo-link">
         <img src="immagini/Logo - This u.png" alt="Logo sito" class="logo-img">
     </a>
-    <main style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;width:100vw;">
-        <div class="img-stack">
-            <img id="immagine-gif" src="https://media.giphy.com/media/evcB2qZZuYOi2lHqbh/giphy.gif" alt="Chuck Liddell che indica - GIF UFC" class="immagine main-gif">
-            <img id="immagine-jpg" src="immagini/IMG_20250605_114351_073.jpg" alt="Seconda immagine" class="immagine half-img">
-        </div>
+    <main>
+        <img id="immagine" src="immagini/x" alt="image" class="immagine">
+        <button class="scroll-down-btn" id="scroll-down" aria-label="Scorri giù">
+            <svg viewBox="0 0 40 40">
+                <polyline points="10,16 20,28 30,16" />
+            </svg>
+        </button>
     </main>
+    <section class="sezione-testo" id="testo-scroll">
+        <h2>Questa campagna nasce per sensibilizzare sulle forme più comuni e silenziose della dipendenza da social:</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </section>
     <script src="script.js"></script>
+    <footer>
+        <div class="footer-content">
+            <div>
+                &copy; 2025 <strong>This u</strong>
+            </div>
+            <div>
+                Realizzato dai ragazzi per i ragazzi
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/this_u_dipendenze/?hl=it" target="_blank" rel="noopener" aria-label="Instagram">
+                    <img src="immagini/500px-Instagram_icon.webp" alt="Instagram" class="footer-instagram-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Torna su">Torna su &uarr;</button>
+    <script>
+    document.getElementById('back-to-top').onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+    </script>
 </body>
 </html>
