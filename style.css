@@ -276,6 +276,49 @@ footer {
 }
 
 /* ========================================
+   FRECCIA LOGO "SCOPRI CHI SIAMO"
+======================================== */
+
+/* Scritta "Scopri chi siamo" sotto al logo */
+.scopri-chi-siamo {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 999;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.scopri-chi-siamo.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animazione pulsante per il logo quando appare la scritta */
+.logo-link.pulse {
+    animation: logoPulse 2s infinite;
+}
+
+/* Animazione di pulsazione per il logo */
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ========================================
    RESPONSIVE DESIGN - 5 FORMATI SPECIFICI
 ======================================== */
 
@@ -571,4 +614,10 @@ footer {
 .index2 #testo-dinamico {
     display: none !important;
 }
+
+/* Responsive per freccia logo */
+@media all and (max-width: 1690px) {
+}
+
+@media all and
 

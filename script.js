@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             src: "immagini/Immagine WhatsApp 2025-07-12 ore 16.28.06_8cd6e5ed.jpg",
             alt: "Immagine dipendenza",
             title: "this u",
-            text: "y"
+            text: "Il burnout è quel senso di esaurimento che ti colpisce quando passi ore a scorrere senza meta, alla ricerca di qualcosa che non sai nemmeno cosa sia. Ti senti svuotato, ma non riesci a fermarti, come se il tuo pollice avesse una volontà propria. I social sono la tua prigione digitale, e tu sei il detenuto volontario che non riesce a trovare la chiave per uscire. il tuo pollice è del tuo cervello?"
         },
         "2": {
             src: "immagini/Immagine WhatsApp 2025-07-12 ore 16.28.07_5040df47.jpg",
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // Testo di default
             if (testoElement) {
-                testoElement.textContent = "x";
+                testoElement.textContent = "La disconnessione digitale è un processo attivo che richiede di spegnere notifiche, impostare limiti di tempo su app e, soprattutto, trovare il coraggio di premere 'off' ma hai davvero il coraggio di farlo?";
             }
         }
 
@@ -110,6 +110,49 @@ document.addEventListener("DOMContentLoaded", () => {
             subtree: true,
             attributes: true,
             attributeFilter: ['style', 'class']
+        });
+    }
+
+    // Gestione scritta "Scopri chi siamo" - SOLO per index.html
+    const scopriChiSiamo = document.getElementById('scopri-chi-siamo');
+    const logoLink = document.getElementById('logo-link');
+    
+    // Non mostrare la scritta su index2.html
+    const isIndex2 = window.location.pathname.endsWith('index2.html');
+    
+    if (scopriChiSiamo && testoScroll && logoLink && !isIndex2) {
+        let hasScrolled = false;
+        
+        // Intersection Observer per rilevare quando la sezione testo è visibile
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasScrolled) {
+                    hasScrolled = true;
+                    // Ritardo di 1 secondo prima di mostrare la scritta
+                    setTimeout(() => {
+                        scopriChiSiamo.classList.add('show');
+                        logoLink.classList.add('pulse');
+                    }, 1000);
+                }
+            });
+        }, {
+            threshold: 0.3 // Attiva quando il 30% della sezione è visibile
+        });
+        
+        observer.observe(testoScroll);
+        
+        // Rendi la scritta cliccabile per andare a index2.html
+        scopriChiSiamo.addEventListener('click', function() {
+            window.location.href = 'index2.html';
+        });
+        
+        // Rendi anche il logo cliccabile (era già cliccabile per il link)
+        logoLink.addEventListener('click', function(e) {
+            // Se la scritta è visibile, va a index2.html, altrimenti mantiene il comportamento normale
+            if (scopriChiSiamo.classList.contains('show')) {
+                e.preventDefault();
+                window.location.href = 'index2.html';
+            }
         });
     }
 });
