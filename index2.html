@@ -64,7 +64,17 @@
     </footer>
     <button id="back-to-top" class="back-to-top-btn" aria-label="Torna su">Torna su &uarr;</button>
     <script>
-    document.getElementById('back-to-top').onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+        // Bottone "Torna su" visibile solo dopo scroll
+        const backToTopBtn = document.getElementById('back-to-top');
+        backToTopBtn.style.display = 'none';
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight * 0.2) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        backToTopBtn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
     </script>
 </body>
 </html>

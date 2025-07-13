@@ -70,7 +70,7 @@ main {
 /* Titolo "Chi siamo?" */
 .chi-siamo-titolo {
     position: absolute;
-    bottom: 70px;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 3rem;
@@ -83,7 +83,7 @@ main {
 /* Pulsante scroll down */
 .scroll-down-btn {
     position: absolute;
-    bottom: 30px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     background: none;
@@ -260,19 +260,26 @@ footer {
 /* Pulsante torna su */
 .back-to-top-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    background: #333;
-    color: white;
+    right: 24px;
+    bottom: 32px;
+    z-index: 999;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background: #e1306c;
+    color: #fff;
     border: none;
+    border-radius: 24px;
+    box-shadow: 0 2px 12px #e1306c44;
     cursor: pointer;
-    font-size: 14px;
-    z-index: 1000;
+    opacity: 0.92;
+    transition: opacity 0.2s, box-shadow 0.2s;
+    display: none;
 }
 
-.back-to-top-btn:hover {
-    background: #555;
+.back-to-top-btn:hover, .back-to-top-btn:focus {
+    opacity: 1;
+    box-shadow: 0 4px 20px #e1306c88;
+    outline: none;
 }
 
 /* ========================================
@@ -341,7 +348,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 3.5rem;
-        bottom: 80px;
+        bottom: 110px;
     }
     
     .sezione-testo {
@@ -388,7 +395,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 3rem;
-        bottom: 70px;
+        bottom: 110px;
     }
     
     .sezione-testo {
@@ -431,7 +438,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 2.5rem;
-        bottom: 65px;
+        bottom: 100px;
     }
     
     .sezione-testo {
@@ -480,7 +487,7 @@ footer {
     
     .chi-siamo-titolo {
         font-size: 2rem;
-        bottom: 60px;
+        bottom: 90px;
     }
     
     .sezione-testo {
@@ -534,7 +541,7 @@ footer {
     .chi-siamo-titolo {
         font-size: 1.6rem;
         padding: 0 1rem;
-        bottom: 55px;
+        bottom: 80px;
     }
     
     .sezione-testo {
@@ -619,5 +626,15 @@ footer {
 @media all and (max-width: 1690px) {
 }
 
-@media all and
+@media all and (min-width: 1280px) and (max-width: 1689px) {
+}
+
+@media all and (min-width: 737px) and (max-width: 1279px) {
+}
+
+@media all and (min-width: 481px) and (max-width: 736px) {
+}
+
+@media all and (max-width: 480px) {
+}
 
