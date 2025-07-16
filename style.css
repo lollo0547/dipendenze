@@ -170,9 +170,14 @@ main {
 
 .instagram-preview {
     margin-top: 3rem;
-    padding: 2rem;
-    background: #f9f9f9;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     border: 1px solid #e0e0e0;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .insta-header {
@@ -182,9 +187,10 @@ main {
 }
 
 .insta-logo {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
+    border-radius: 4px;
 }
 
 .insta-username {
@@ -201,12 +207,14 @@ main {
 
 .instagram-preview-img {
     width: 100%;
+    max-width: 320px;
     height: 200px;
     object-fit: cover;
-    object-position: top;
-    border: none;
+    object-position: center;
+    border-radius: 8px;
+    border: 1px solid #eee;
     background: #fafafa;
-    margin-top: 18px;
+    margin: 18px auto 0 auto;
     display: block;
 }
 
@@ -222,10 +230,14 @@ main {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px #0095f633;
+    transition: background 0.2s, box-shadow 0.2s;
 }
 
 .insta-link:hover {
     background: #0077cc;
+    box-shadow: 0 2px 8px #0095f655;
 }
 
 /* ========================================
