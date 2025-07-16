@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             src: "immagini/Immagine WhatsApp 2025-07-12 ore 16.28.06_8cd6e5ed.jpg",
             alt: "Immagine dipendenza",
             title: "this u",
-            text: "Il burnout è quel senso di esaurimento che ti colpisce quando passi ore a scorrere senza meta, alla ricerca di qualcosa che non sai nemmeno cosa sia. Ti senti svuotato, ma non riesci a fermarti, come se il tuo pollice avesse una volontà propria. I social sono la tua prigione digitale, e tu sei il detenuto volontario che non riesce a trovare la chiave per uscire. il tuo pollice è del tuo cervello?"
+            text: "Il <b>burnout</b> è quel senso di <b>esaurimento</b> che ti colpisce quando passi ore a <b>scorrere senza meta</b>, alla ricerca di qualcosa che non sai nemmeno cosa sia. Ti senti <b>svuotato</b>, ma <b>non riesci a fermarti</b>, come se il tuo <b>pollice</b> avesse una volontà propria. I social sono la tua <b>prigione digitale</b>, e tu sei il <b>detenuto volontario</b> che non riesce a trovare la <b>chiave per uscire</b>. Il tuo <b>pollice</b> è del tuo <b>cervello</b>?"
         },
         "2": {
             src: "immagini/Immagine WhatsApp 2025-07-12 ore 16.28.07_5040df47.jpg",
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // Aggiorna il testo dinamico
             if (testoElement && imgMap[img].text) {
-                testoElement.textContent = imgMap[img].text;
+                testoElement.innerHTML = imgMap[img].text;
             }
         } else {
             imgElement.src = "immagini/Immagine WhatsApp 2025-07-12 ore 18.55.35_f5e39a76.jpg";
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // Testo di default
             if (testoElement) {
-                testoElement.textContent = "La disconnessione digitale è un processo attivo che richiede di spegnere notifiche, impostare limiti di tempo su app e, soprattutto, trovare il coraggio di premere 'off' ma hai davvero il coraggio di farlo?";
+                testoElement.innerHTML = "La disconnessione digitale è un <b>processo attivo</b> che richiede di <b>spegnere notifiche</b>, impostare limiti di tempo su app e, soprattutto, trovare il coraggio di premere 'off' ma <b>hai davvero il coraggio di farlo?</b>";
             }
         }
 
